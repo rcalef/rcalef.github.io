@@ -1,6 +1,6 @@
 ---
 layout: distill
-title: Examining assumptions in scRNA-seq foundation model pre-training (6.S898 Final Project)
+title: Examining assumptions in scRNA-seq foundation model pre-training
 description: Final project for MIT's Deep Generative Models (6.S978) class.
 date: 2024-12-07
 htmlwidgets: true
