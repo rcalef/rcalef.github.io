@@ -107,7 +107,7 @@ On the other hand, we have the methods that we're most interested in for the pur
 In Geneformer, gene expression values are first converted to a rank-value encoding and then used to train a Transformer-based model using a variant of a masked language modeling objective in which a set of genes at random ranks are masked, and the model must learn to predict the masked gene names.
 In cell2sentence and GenePT, pre-trained auto-regressive language models (GPT-2 and GPT-3.5 respectively) are applied to the rank-value encoded list of genes to obtain cell-level embeddings that are then used for downstream tasks. Again, we won't dive into the full details of these approaches, but provide schematic overviews of them below.
 
-{% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig2_Geneformer_schematic.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig2_geneformer_schematic.png" class="img-fluid rounded z-depth-1" %}
 {% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig2_genePT_schematic.png" class="img-fluid rounded z-depth-1" %}
 {% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig2_cell2sentence_schematic.png" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
