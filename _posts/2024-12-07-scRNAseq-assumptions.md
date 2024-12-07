@@ -58,7 +58,7 @@ To create proteins from genes, an intermediate "data transfer" occurs through an
 Due to the importance of gene expression, many technologies have been developed to make quantitative measurements of gene expression from cells.
 One of the most prominent technologies is called single-cell RNA sequencing (scRNA-seq), which enables the measurement of the expression of all genes in a given cell, often measured across thousands of cells simultaneously <d-cite key="hwangSinglecellRNASequencing2018"></d-cite>.
 
-{% include figure.html path="assets/img/2024-12-07-scRNAseq-assumptions/fig1_scRNA_seq_overview.png" class="img-fluid" %}
+{% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig1_scRNA_seq_overview.png" class="img-fluid" %}
 <div class="caption">
     Schematic overview of the scRNA-seq workflow. Figure sourced from <d-cite key="panMicrofluidicsFacilitatesDevelopment2022"></d-cite>.
 </div>
@@ -77,7 +77,7 @@ In this post, we'll explore a fundamental assumption of three such models (Genef
 
 What exactly is a rank-value encoding? Well, a typical representation of gene expression is a vector $$ x \in \mathbb{R}^N $$, where $$ N $$ is the number of genes, and each entry is a measure of the corresponding gene's expression. In a rank-value encoding, gene expression is instead represented as a list of N strings, where the strings are gene names, and are ordered in descending order of the underlying gene expression value.
 
-{% include figure.html path="assets/img/2024-12-07-scRNAseq-assumptions/fig2_rank_value_schematic.png" class="img-fluid" %}
+{% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig2_rank_value_schematic.png" class="img-fluid" %}
 <div class="caption">
     Standard encoding of gene expression values compared to a rank-value encoding.
 </div>
@@ -96,9 +96,9 @@ distinction between methods that employ some form of value-binning, where contin
 In contrast, scFoundation<d-cite key="haoLargeScaleFoundation2023"></d-cite> calculates gene expression embeddings by first transforming continuous scalar values to a vector using a small MLP,
 and then calculating a final embedding by using an attention mechanism over K learned vectors. While we won't cover the full details, schematics of the approaches can be seen below to get a sense of the overall architectures, and most importantly to see how they directly use the gene expression values as input.
 
-{% include figure.html path="assets/img/2024-12-07-scRNAseq-assumptions/fig2_scGPT_schematic.png" class="img-fluid rounded z-depth-1" %}
-{% include figure.html path="assets/img/2024-12-07-scRNAseq-assumptions/fig2_scBERT_schematic.png" class="img-fluid rounded z-depth-1" %}
-{% include figure.html path="assets/img/2024-12-07-scRNAseq-assumptions/fig2_scFoundation_schematic.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig2_scGPT_schematic.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig2_scBERT_schematic.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig2_scFoundation_schematic.png" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
   Schematics of the various approaches that *do not* use a rank-value encoding (top to bottom): scGPT, scBERT, and scFoundation. Figures sourced from <d-cite key="cuiScGPTBuildingFoundation2023"></d-cite><d-cite key="yangScBERTLargescalePretrained2022"></d-cite><d-cite key="haoLargeScaleFoundation2023"></d-cite>.
 </div>
@@ -107,9 +107,9 @@ On the other hand, we have the methods that we're most interested in for the pur
 In Geneformer, gene expression values are first converted to a rank-value encoding and then used to train a Transformer-based model using a variant of a masked language modeling objective in which a set of genes at random ranks are masked, and the model must learn to predict the masked gene names.
 In cell2sentence and GenePT, pre-trained auto-regressive language models (GPT-2 and GPT-3.5 respectively) are applied to the rank-value encoded list of genes to obtain cell-level embeddings that are then used for downstream tasks. Again, we won't dive into the full details of these approaches, but provide schematic overviews of them below.
 
-{% include figure.html path="assets/img/2024-12-07-scRNAseq-assumptions/fig2_Geneformer_schematic.png" class="img-fluid rounded z-depth-1" %}
-{% include figure.html path="assets/img/2024-12-07-scRNAseq-assumptions/fig2_genePT_schematic.png" class="img-fluid rounded z-depth-1" %}
-{% include figure.html path="assets/img/2024-12-07-scRNAseq-assumptions/fig2_cell2sentence_schematic.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig2_Geneformer_schematic.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig2_genePT_schematic.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig2_cell2sentence_schematic.png" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
   Schematics of the various approaches that *do* use a rank-value encoding (top to bottom): Geneformer, GenePT, and cell2sentence. Figures sourced from <d-cite key="theodorisTransferLearningEnables2023"></d-cite><d-cite key="chenGeneptSimpleHardtoBeat2023"></d-cite><d-cite key="levineCell2SentenceTeachingLarge2023"></d-cite>.
 </div>
@@ -126,7 +126,7 @@ To perform our assessment of rank-value encoding, we'll work with the Tabula Sap
 
 We use the final dataset from Tabula Sapiens, which has already been subjected to quality control assessment, filtering, and normalization. While we won't go into the details of their pipeline here, these are available in their manuscript for the interested reader. In line with typical scRNA-seq workflows, we also subset the full set of ~22,000 genes down to a subset of 2,435 genes that have been marked as "highly variable genes" (HVGs) in the Tabula Sapiens dataset. This is a fairly standard step in scRNA-seq data processing workflows, as many genes are constitutively expressed across cell types, and thus provide little information for distinguishing between cell types. Highly variable gene selection was performed by the Tabula Sapiens Consortium following the methods and recommendations in Seurat<d-cite key="stuartComprehensiveIntegrationSingleCell2019"></d-cite>, a commonly used scRNA-seq data processing package.
 
-{% include figure.html path="assets/img/2024-12-07-scRNAseq-assumptions/fig3_cell_type_hist.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig3_cell_type_hist.png" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
   Number of cells per cell type. Note that the majority of cell types have ~1000 examples, but that there's a long tail of highly represented cell types with up to 35k examples.
 </div>
@@ -231,7 +231,7 @@ To assess how well a cellular state can be represented using a rank-value encodi
 
  For each distance measure, we can then generate comparisons at the level of cell types by summarizing via the median of the pairwise distances, either within or between cell types. A schematic of this approach is shown below.
 
- {% include figure.html path="assets/img/2024-12-07-scRNAseq-assumptions/fig4_comparison_schematic.png" class="img-fluid rounded z-depth-1" %}
+ {% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig4_comparison_schematic.png" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
   Overview of method for computing distance measures between cells followed by summarization to generate comparisons at the level of cell types.
 </div>
@@ -250,7 +250,7 @@ To fully assess the effect of rank-value encoding in a deep learning model, we t
 ### Rank-value encodings preserve similarity between cell types
 The first thing we can see from our results is that rank-value encodings do preserve similarity between cell types in a similar manner as distances generated from raw gene expression values. The figure below is generated by looking at the distributions of distances between pairs of cells from the same type ("within") or from different cell types ("between"). To provide a comparison at the level of cell types, we plot the median of each distribution rather than individual pairs of cells, i.e. the "within" group contains 89 data points and the "between" group contains $$ \frac{89 \times 88}{2} $$ data points.
 
-{% include figure.html path="assets/img/2024-12-07-scRNAseq-assumptions/fig6_combined_measure_comparison.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig6_combined_measure_comparison.png" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
   Comparison of various similarity measures both within cell types and between cell types. Note that for the Euclidean distances (left and right), lower is more similar, whereas for rank correlation (middle), higher is more similar.
 </div>
@@ -267,10 +267,10 @@ the number of points that fall within that bin.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/2024-12-07-scRNAseq-assumptions/fig7_raw_umap_vs_rank_corr_within_type.png" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig7_raw_umap_vs_rank_corr_within_type.png" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/2024-12-07-scRNAseq-assumptions/fig8_raw_umap_vs_rank_corr_between_type.png" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig8_raw_umap_vs_rank_corr_between_type.png" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -287,10 +287,10 @@ out the rank correlation distance measure for the distance measure based on Gene
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/2024-12-07-scRNAseq-assumptions/fig9_raw_umap_vs_geneformer_umap_within_type.png" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig9_raw_umap_vs_geneformer_umap_within_type.png" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/2024-12-07-scRNAseq-assumptions/fig10_raw_umap_vs_geneformer_umap_between_type.png" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig10_raw_umap_vs_geneformer_umap_between_type.png" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -308,10 +308,10 @@ Shown below is a histogram of sparsity per cell in the full Tabula Sapiens datas
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/2024-12-07-scRNAseq-assumptions/fig4_sparsity_full_dataset.png" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig4_sparsity_full_dataset.png" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/2024-12-07-scRNAseq-assumptions/fig5_sparsity_subset.png" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig5_sparsity_subset.png" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -360,10 +360,10 @@ various diseases, paving the way for a new era of disease treatments and precisi
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/2024-12-07-scRNAseq-assumptions/fig11_SUP_raw_umap_vs_geneformer_raw_within_type.png" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig11_SUP_raw_umap_vs_geneformer_raw_within_type.png" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/2024-12-07-scRNAseq-assumptions/fig12_SUP_raw_umap_vs_geneformer_raw_between_type.png" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/2024-12-07-scRNAseq-assumptions/fig12_SUP_raw_umap_vs_geneformer_raw_between_type.png" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
