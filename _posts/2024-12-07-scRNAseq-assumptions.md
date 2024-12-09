@@ -84,7 +84,7 @@ that enact a specified function <d-cite key="ingrahamIlluminatingProteinSpace202
 Given these developments in generative modeling, an exciting thread of research is applying generative modeling techniques to gene
 expression data, like scRNA-seq datasets, with the goal of creating models that approach perturbation modeling from a conditional
 generation standpoint. Such models would have immense impact in areas like cellular reprogramming or therapeutics development. For example, being able to accurately generate a gene expression profile conditioned on a library of possible therapeutics would enable *in silico* screening of therapeutics, thus bypassing time-consuming and costly real-world experiments and vastly decreasing the
-amount of time it takes to develop life-saving therapeutics<d-cite key=""> </d-cite>.
+amount of time it takes to develop life-saving therapeutics<d-cite key="qiPredictingTranscriptionalResponses2024"> </d-cite>.
 
 A key component of such generative models for scRNA-seq data is creating informative representations of cellular states, often
 achieved through "foundation models", large-scale deep learning models pre-trained with vast amounts of data for the purposes of creating a generalizable representation of a particular datatype (e.g. text, images).
