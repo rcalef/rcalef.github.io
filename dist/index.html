@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en" data-type="modern">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <script src="/typography.js"></script>
+    <script src="/timeline.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f7f6f2" />
     <meta
@@ -13,7 +13,7 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/styles.css" />
   </head>
-  <body>
+  <body class="home-page">
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="site-shell">
       <header class="site-header">
@@ -35,7 +35,8 @@
               I'm Robert Calef, a 4th year PhD student at MIT CSAIL.
             </p>
             <p class="body-copy">
-              My scientific work has been an eclectic mix of developing
+              <span class="illuminated-initial">M</span>y scientific work has
+              been an eclectic mix of developing
               computational methods to extract insight from large biological
               datasets. During my PhD, I've worked on multimodal protein
               modeling and representation learning, and lately have been focused
@@ -97,7 +98,15 @@
               width="1200"
               height="1600"
               decoding="async"
+              loading="lazy"
             />
+            <div class="timeline-actions" hidden>
+              <button type="button" data-random-timeline>Enter the time machine</button>
+              <button type="button" data-return-to-present hidden>
+                Return to the present day
+              </button>
+              <span class="visually-hidden" role="status"></span>
+            </div>
             <nav class="portrait-links" aria-label="Contact and profiles">
               <a
                 href="https://www.linkedin.com/in/robert-calef/"
@@ -230,7 +239,6 @@
 
       <footer class="site-footer">
         <span>© <span id="year">2026</span> Robert Calef</span>
-        <!-- <a href="/typography.html">Compare typography</a> -->
       </footer>
     </div>
     <script src="/site.js" defer></script>

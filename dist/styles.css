@@ -1,4 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap");
+@font-face {
+  font-family: "Faith Collapsing";
+  src: url("/assets/timelines/1500s/faith-collapsing.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "1942 Report";
+  src: url("/assets/timelines/1940s/1942-report.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
 
 :root {
   --paper: #f7f6f2;
@@ -8,10 +19,23 @@
   --accent: #486a59;
   --display:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --sans:
+  --body-font:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   --heading-weight: 600;
   --heading-spacing: -0.025em;
+}
+html[data-timeline="1500s"] {
+  --display: "Faith Collapsing", Georgia, serif;
+}
+html[data-timeline="1940s"] {
+  --display: "1942 Report", "Courier New", monospace;
+}
+html:is([data-timeline="1500s"], [data-timeline="1940s"]) {
+  --heading-weight: 400;
+  --heading-spacing: normal;
+}
+.home-page {
+  --body-font: var(--display);
 }
 * {
   box-sizing: border-box;
@@ -20,7 +44,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font: 16px/1.65 var(--sans);
+  font: 16px/1.65 var(--body-font);
   -webkit-font-smoothing: antialiased;
 }
 a {
@@ -89,7 +113,7 @@ h3 {
   color: var(--ink);
 }
 .brand-mark {
-  font: 600 19px/1 var(--sans);
+  font: 600 19px/1 var(--body-font);
 }
 .nav {
   display: flex;
@@ -119,14 +143,33 @@ h3 {
   padding: 56px 0 54px;
 }
 .hero-lead {
-  font: 400 18px/1.65 var(--sans);
+  font: 400 18px/1.65 var(--body-font);
   margin-bottom: 16px;
+}
+html[data-timeline="1500s"] .hero-lead {
+  font-size: 1.375rem;
 }
 .body-copy {
   color: var(--ink);
   font-size: 16px;
   line-height: 1.75;
   margin-bottom: 16px;
+}
+html[data-timeline="1500s"] .illuminated-initial {
+  position: relative;
+  float: left;
+  width: 5rem;
+  aspect-ratio: 1;
+  margin: 0.125rem 0.625rem 0.125rem 0;
+  font-size: 3.5rem;
+  line-height: 5rem;
+  text-align: center;
+}
+html[data-timeline="1500s"] .illuminated-initial::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/assets/timelines/1500s/illuminated-m.jpg") center / cover;
 }
 .hero-actions {
   display: flex;
@@ -152,6 +195,27 @@ h3 {
   height: auto;
   aspect-ratio: 4/5;
   object-fit: cover;
+}
+.timeline-actions:not([hidden]) {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+.timeline-actions button {
+  min-height: 36px;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.timeline-actions button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 .portrait-links {
   display: flex;
@@ -277,9 +341,6 @@ h3 {
   color: var(--muted);
   font-size: 12px;
 }
-.site-footer a {
-  color: inherit;
-}
 .page-heading {
   padding: 44px 0 26px;
 }
@@ -384,199 +445,6 @@ h3 {
   margin: 0 0 4px;
 }
 
-/* Keep all five typography directions available for future experiments. */
-html[data-type="editorial"] {
-  --display: "Libre Caslon Display", Georgia, serif;
-  --sans: "DM Sans", Arial, sans-serif;
-  --heading-weight: 400;
-}
-html[data-type="classic"] {
-  --display: Georgia, "Times New Roman", serif;
-  --sans: Arial, Helvetica, sans-serif;
-  --heading-weight: 400;
-}
-html[data-type="bookish"] {
-  --display: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
-  --sans: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
-  --heading-weight: 400;
-}
-html[data-type="journal"] {
-  --display: "Times New Roman", Times, serif;
-  --sans: Arial, Helvetica, sans-serif;
-  --heading-weight: 400;
-}
-
-/* Comparison specimens keep their own fonts as the active selection changes. */
-.type-heading {
-  padding-bottom: 30px;
-}
-.type-status {
-  display: inline-block;
-  margin-top: 12px !important;
-  color: var(--accent) !important;
-  font-size: 13px !important;
-}
-.type-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 16px;
-  padding-bottom: 32px;
-}
-.type-card {
-  background: #fcfcfa;
-  border: 1px solid var(--line);
-  padding: 23px;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-.type-card:has(button[aria-pressed="true"]) {
-  border-color: var(--accent);
-  box-shadow: inset 0 0 0 1px var(--accent);
-}
-.type-card-top {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  font:
-    400 11px/1.4 Arial,
-    Helvetica,
-    sans-serif;
-  color: var(--muted);
-  margin-bottom: 12px;
-}
-.type-card h2 {
-  font:
-    600 21px/1.2 Arial,
-    Helvetica,
-    sans-serif;
-  letter-spacing: -0.025em;
-  margin: 0 0 6px;
-}
-.type-notes {
-  font:
-    13px/1.6 Arial,
-    Helvetica,
-    sans-serif;
-  color: var(--muted);
-  min-height: 62px;
-  margin: 0 0 19px;
-}
-.type-specimen {
-  border-top: 1px solid var(--line);
-  padding-top: 15px;
-  flex: 1;
-}
-.type-specimen-label {
-  font:
-    400 11px/1.3 Arial,
-    Helvetica,
-    sans-serif;
-  color: var(--muted);
-  margin: 0 0 5px;
-}
-.type-sample-title {
-  font-size: 42px;
-  line-height: 1.04;
-  margin: 0 0 20px;
-  white-space: normal;
-  letter-spacing: -0.04em;
-}
-.type-sample-body {
-  font-size: 14px;
-  line-height: 1.65;
-  min-height: 93px;
-  margin: 0 0 18px;
-  color: #4d5852;
-}
-.type-sample-paper {
-  font-size: 23px;
-  line-height: 1.18;
-  min-height: 57px;
-  margin: 0 0 20px;
-  letter-spacing: -0.015em;
-}
-.type-editorial .type-sample-title,
-.type-editorial .type-sample-paper {
-  font-family: "Libre Caslon Display", Georgia, serif;
-  font-weight: 400;
-}
-.type-editorial .type-sample-body {
-  font-family: "DM Sans", Arial, sans-serif;
-}
-.type-classic .type-sample-title,
-.type-classic .type-sample-paper {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 400;
-}
-.type-classic .type-sample-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-.type-bookish .type-sample-title,
-.type-bookish .type-sample-paper,
-.type-bookish .type-sample-body {
-  font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
-  font-weight: 400;
-}
-.type-bookish .type-sample-body {
-  font-size: 15px;
-}
-.type-modern .type-sample-title,
-.type-modern .type-sample-paper,
-.type-modern .type-sample-body {
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-}
-.type-modern .type-sample-title,
-.type-modern .type-sample-paper {
-  font-weight: 600;
-  letter-spacing: -0.055em;
-}
-.type-journal .type-sample-title,
-.type-journal .type-sample-paper {
-  font-family: "Times New Roman", Times, serif;
-  font-weight: 400;
-}
-.type-journal .type-sample-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-.type-card button {
-  align-self: flex-start;
-  border: 1px solid var(--accent);
-  background: transparent;
-  color: var(--accent);
-  padding: 9px 13px;
-  font:
-    400 13px/1.2 Arial,
-    Helvetica,
-    sans-serif;
-  cursor: pointer;
-}
-.type-card button:hover,
-.type-card button[aria-pressed="true"] {
-  background: var(--accent);
-  color: white;
-}
-.type-next {
-  border-top: 1px solid var(--line);
-  padding: 25px 0 44px;
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  align-items: center;
-}
-.type-next p {
-  color: var(--muted);
-  font-size: 13px;
-  max-width: 430px;
-  margin: 0;
-}
-.type-next div {
-  display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
-}
-
 @media (max-width: 760px) {
   .site-shell {
     padding: 0 28px;
@@ -589,10 +457,6 @@ html[data-type="journal"] {
   .cv-section {
     grid-template-columns: 1fr;
     gap: 21px;
-  }
-  .type-next {
-    align-items: flex-start;
-    flex-direction: column;
   }
 }
 @media (max-width: 540px) {
@@ -660,14 +524,6 @@ html[data-type="journal"] {
   }
   .cv-item time {
     font-size: 12px;
-  }
-  .type-grid {
-    grid-template-columns: 1fr;
-  }
-  .type-notes,
-  .type-sample-body,
-  .type-sample-paper {
-    min-height: 0;
   }
   .site-footer {
     gap: 14px;
