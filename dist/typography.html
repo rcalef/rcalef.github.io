@@ -1,32 +1,226 @@
 <!doctype html>
 <html lang="en" data-type="modern">
-<head>
-  <meta charset="utf-8">
-  <script src="/typography.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f7f6f2">
-  <meta name="description" content="Compare five typography directions for this academic website.">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><title>Compare typography — Robert Calef</title>
-  <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="site-shell">
-    <header class="site-header">
-      <a class="brand" href="/" aria-label="Robert Calef, home"><span class="brand-mark">RC</span></a>
-      <nav class="nav" aria-label="Main navigation"><a href="/">Home</a><a href="/publications.html">Publications</a><a href="/cv.html">CV</a></nav>
-    </header>
-    <main id="main">
-      <header class="page-heading type-heading"><h1>Compare the type</h1><p>Five approaches using the same sample content. Each card shows the headline, reading text, and publication title together. Choose one to apply it across the site, then browse the real pages.</p><p id="type-status" class="type-status" role="status"></p></header>
-      <div class="type-grid">
-        <section class="type-card type-editorial" data-label="Editorial serif" aria-labelledby="editorial-title"><div class="type-card-top"><span>01</span><span>Original style</span></div><h2 id="editorial-title">Editorial serif</h2><p class="type-notes">Libre Caslon Display + DM Sans. Open, polished, and a little expressive.</p><div class="type-specimen"><p class="type-specimen-label">Headline</p><p class="type-sample-title">Robert Calef.</p><p class="type-specimen-label">Short bio</p><p class="type-sample-body">I study how ideas travel between disciplines, and how careful methods help us ask better questions.</p><p class="type-specimen-label">Publication</p><p class="type-sample-paper">A clearer way to frame the question</p></div><button type="button" data-choose-type="editorial" aria-pressed="false">Apply to site</button></section>
-        <section class="type-card type-classic" data-label="Classic academic" aria-labelledby="classic-title"><div class="type-card-top"><span>02</span><span>Familiar &amp; clear</span></div><h2 id="classic-title">Classic academic</h2><p class="type-notes">Georgia + Arial. The recognizable academic page, carefully spaced.</p><div class="type-specimen"><p class="type-specimen-label">Headline</p><p class="type-sample-title">Robert Calef.</p><p class="type-specimen-label">Short bio</p><p class="type-sample-body">I study how ideas travel between disciplines, and how careful methods help us ask better questions.</p><p class="type-specimen-label">Publication</p><p class="type-sample-paper">A clearer way to frame the question</p></div><button type="button" data-choose-type="classic" aria-pressed="false">Apply to site</button></section>
-        <section class="type-card type-bookish" data-label="Bookish serif" aria-labelledby="bookish-title"><div class="type-card-top"><span>03</span><span>Warm &amp; thoughtful</span></div><h2 id="bookish-title">Bookish serif</h2><p class="type-notes">Palatino throughout. A quieter, more literary reading experience.</p><div class="type-specimen"><p class="type-specimen-label">Headline</p><p class="type-sample-title">Robert Calef.</p><p class="type-specimen-label">Short bio</p><p class="type-sample-body">I study how ideas travel between disciplines, and how careful methods help us ask better questions.</p><p class="type-specimen-label">Publication</p><p class="type-sample-paper">A clearer way to frame the question</p></div><button type="button" data-choose-type="bookish" aria-pressed="false">Apply to site</button></section>
-        <section class="type-card type-modern" data-label="Modern sans" aria-labelledby="modern-title"><div class="type-card-top"><span>04</span><span>Site default</span></div><h2 id="modern-title">Modern sans</h2><p class="type-notes">System sans throughout. Plainspoken, compact, and contemporary.</p><div class="type-specimen"><p class="type-specimen-label">Headline</p><p class="type-sample-title">Robert Calef.</p><p class="type-specimen-label">Short bio</p><p class="type-sample-body">I study how ideas travel between disciplines, and how careful methods help us ask better questions.</p><p class="type-specimen-label">Publication</p><p class="type-sample-paper">A clearer way to frame the question</p></div><button type="button" data-choose-type="modern" aria-pressed="false">Apply to site</button></section>
-        <section class="type-card type-journal" data-label="Journal note" aria-labelledby="journal-title"><div class="type-card-top"><span>05</span><span>Print-like &amp; reserved</span></div><h2 id="journal-title">Journal note</h2><p class="type-notes">Times New Roman + Arial. Lean, formal, and intentionally unstyled.</p><div class="type-specimen"><p class="type-specimen-label">Headline</p><p class="type-sample-title">Robert Calef.</p><p class="type-specimen-label">Short bio</p><p class="type-sample-body">I study how ideas travel between disciplines, and how careful methods help us ask better questions.</p><p class="type-specimen-label">Publication</p><p class="type-sample-paper">A clearer way to frame the question</p></div><button type="button" data-choose-type="journal" aria-pressed="false">Apply to site</button></section>
-      </div>
-      <div class="type-next"><p>Once you choose a direction, the selection stays in this browser while you visit the other pages.</p><div><a class="text-link" href="/">View home</a><a class="text-link" href="/publications.html">View publications</a></div></div>
-    </main>
-    <footer class="site-footer"><span>© <span id="year">2026</span> Robert Calef</span><a href="/typography.html" aria-current="page">Compare typography</a></footer>
-  </div><script src="/site.js" defer></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script src="/typography.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f6f2" />
+    <meta
+      name="description"
+      content="Compare five typography directions for this academic website."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Compare typography — Robert Calef</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="/" aria-label="Robert Calef, home"
+          ><span class="brand-mark">RC</span></a
+        >
+        <nav class="nav" aria-label="Main navigation">
+          <a href="/">Home</a><a href="/publications.html">Publications</a
+          ><a href="/cv.html">CV</a>
+        </nav>
+      </header>
+      <main id="main">
+        <header class="page-heading type-heading">
+          <h1>Compare the type</h1>
+          <p>
+            Five approaches using the same sample content. Each card shows the
+            headline, reading text, and publication title together. Choose one
+            to apply it across the site, then browse the real pages.
+          </p>
+          <p id="type-status" class="type-status" role="status"></p>
+        </header>
+        <div class="type-grid">
+          <section
+            class="type-card type-editorial"
+            data-label="Editorial serif"
+            aria-labelledby="editorial-title"
+          >
+            <div class="type-card-top">
+              <span>01</span><span>Original style</span>
+            </div>
+            <h2 id="editorial-title">Editorial serif</h2>
+            <p class="type-notes">
+              Libre Caslon Display + DM Sans. Open, polished, and a little
+              expressive.
+            </p>
+            <div class="type-specimen">
+              <p class="type-specimen-label">Headline</p>
+              <p class="type-sample-title">Robert Calef.</p>
+              <p class="type-specimen-label">Short bio</p>
+              <p class="type-sample-body">
+                I study how ideas travel between disciplines, and how careful
+                methods help us ask better questions.
+              </p>
+              <p class="type-specimen-label">Publication</p>
+              <p class="type-sample-paper">
+                A clearer way to frame the question
+              </p>
+            </div>
+            <button
+              type="button"
+              data-choose-type="editorial"
+              aria-pressed="false"
+            >
+              Apply to site
+            </button>
+          </section>
+          <section
+            class="type-card type-classic"
+            data-label="Classic academic"
+            aria-labelledby="classic-title"
+          >
+            <div class="type-card-top">
+              <span>02</span><span>Familiar &amp; clear</span>
+            </div>
+            <h2 id="classic-title">Classic academic</h2>
+            <p class="type-notes">
+              Georgia + Arial. The recognizable academic page, carefully spaced.
+            </p>
+            <div class="type-specimen">
+              <p class="type-specimen-label">Headline</p>
+              <p class="type-sample-title">Robert Calef.</p>
+              <p class="type-specimen-label">Short bio</p>
+              <p class="type-sample-body">
+                I study how ideas travel between disciplines, and how careful
+                methods help us ask better questions.
+              </p>
+              <p class="type-specimen-label">Publication</p>
+              <p class="type-sample-paper">
+                A clearer way to frame the question
+              </p>
+            </div>
+            <button
+              type="button"
+              data-choose-type="classic"
+              aria-pressed="false"
+            >
+              Apply to site
+            </button>
+          </section>
+          <section
+            class="type-card type-bookish"
+            data-label="Bookish serif"
+            aria-labelledby="bookish-title"
+          >
+            <div class="type-card-top">
+              <span>03</span><span>Warm &amp; thoughtful</span>
+            </div>
+            <h2 id="bookish-title">Bookish serif</h2>
+            <p class="type-notes">
+              Palatino throughout. A quieter, more literary reading experience.
+            </p>
+            <div class="type-specimen">
+              <p class="type-specimen-label">Headline</p>
+              <p class="type-sample-title">Robert Calef.</p>
+              <p class="type-specimen-label">Short bio</p>
+              <p class="type-sample-body">
+                I study how ideas travel between disciplines, and how careful
+                methods help us ask better questions.
+              </p>
+              <p class="type-specimen-label">Publication</p>
+              <p class="type-sample-paper">
+                A clearer way to frame the question
+              </p>
+            </div>
+            <button
+              type="button"
+              data-choose-type="bookish"
+              aria-pressed="false"
+            >
+              Apply to site
+            </button>
+          </section>
+          <section
+            class="type-card type-modern"
+            data-label="Modern sans"
+            aria-labelledby="modern-title"
+          >
+            <div class="type-card-top">
+              <span>04</span><span>Site default</span>
+            </div>
+            <h2 id="modern-title">Modern sans</h2>
+            <p class="type-notes">
+              System sans throughout. Plainspoken, compact, and contemporary.
+            </p>
+            <div class="type-specimen">
+              <p class="type-specimen-label">Headline</p>
+              <p class="type-sample-title">Robert Calef.</p>
+              <p class="type-specimen-label">Short bio</p>
+              <p class="type-sample-body">
+                I study how ideas travel between disciplines, and how careful
+                methods help us ask better questions.
+              </p>
+              <p class="type-specimen-label">Publication</p>
+              <p class="type-sample-paper">
+                A clearer way to frame the question
+              </p>
+            </div>
+            <button
+              type="button"
+              data-choose-type="modern"
+              aria-pressed="false"
+            >
+              Apply to site
+            </button>
+          </section>
+          <section
+            class="type-card type-journal"
+            data-label="Journal note"
+            aria-labelledby="journal-title"
+          >
+            <div class="type-card-top">
+              <span>05</span><span>Print-like &amp; reserved</span>
+            </div>
+            <h2 id="journal-title">Journal note</h2>
+            <p class="type-notes">
+              Times New Roman + Arial. Lean, formal, and intentionally unstyled.
+            </p>
+            <div class="type-specimen">
+              <p class="type-specimen-label">Headline</p>
+              <p class="type-sample-title">Robert Calef.</p>
+              <p class="type-specimen-label">Short bio</p>
+              <p class="type-sample-body">
+                I study how ideas travel between disciplines, and how careful
+                methods help us ask better questions.
+              </p>
+              <p class="type-specimen-label">Publication</p>
+              <p class="type-sample-paper">
+                A clearer way to frame the question
+              </p>
+            </div>
+            <button
+              type="button"
+              data-choose-type="journal"
+              aria-pressed="false"
+            >
+              Apply to site
+            </button>
+          </section>
+        </div>
+        <div class="type-next">
+          <p>
+            Once you choose a direction, the selection stays in this browser
+            while you visit the other pages.
+          </p>
+          <div>
+            <a class="text-link" href="/">View home</a
+            ><a class="text-link" href="/publications.html"
+              >View publications</a
+            >
+          </div>
+        </div>
+      </main>
+      <footer class="site-footer">
+        <span>© <span id="year">2026</span> Robert Calef</span
+        ><a href="/typography.html" aria-current="page">Compare typography</a>
+      </footer>
+    </div>
+    <script src="/site.js" defer></script>
+  </body>
 </html>
