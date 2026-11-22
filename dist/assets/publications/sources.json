@@ -1,0 +1,97 @@
+{
+  "magneton-2026": {
+    "source_url": "https://arxiv.org/html/2512.18114v2#S1.F1",
+    "figure_label": "Figure 1",
+    "alt": "Protein substructures assemble into full proteins; curated substructure annotations train protein models for downstream tasks.",
+    "original": true,
+    "notes": "Original figure/panel, extracted and resized; no scientific content redrawn.",
+    "image": "magneton-2026.webp"
+  },
+  "procyon-2025": {
+    "source_url": "https://zitniklab.hms.harvard.edu/ProCyon/",
+    "image_url": "https://zitniklab.hms.harvard.edu/ProCyon/static/images/model_use_cases.png",
+    "figure_label": "ProCyon capabilities schematic",
+    "alt": "ProCyon model capabilities, including protein annotation, phenotype generation and protein retrieval from flexible multimodal prompts.",
+    "original": true,
+    "notes": "Complete first capabilities schematic from the ProCyon project site; resized without cropping or redrawing.",
+    "credit": "ProCyon project website, Queen et al.; CC BY-SA 4.0; resized.",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "image": "procyon-2025.webp"
+  },
+  "cfdna-approaches-2022": {
+    "source_url": "https://doi.org/10.1016/j.ccell.2022.10.022",
+    "figure_label": "Graphical abstract",
+    "alt": "Graphical abstract comparing methylation, targeted sequencing and whole-genome cell-free DNA approaches for multi-cancer early detection.",
+    "original": true,
+    "notes": "Original figure/panel, extracted and resized; no scientific content redrawn.",
+    "image": "cfdna-approaches-2022.webp"
+  },
+  "masked-beam-search-2024": {
+    "source_url": "https://arxiv.org/html/2402.15020v3#S1.F1",
+    "figure_label": "Figure 1",
+    "alt": "Standard beam search and probabilistically sound HCB beam search choose different words when filling masked text.",
+    "original": true,
+    "notes": "Original figure/panel, extracted and resized; no scientific content redrawn.",
+    "image": "masked-beam-search-2024.webp"
+  },
+  "cancer-subtypes-2024": {
+    "source_url": "https://grail.com/wp-content/uploads/2024/04/7566_Nance_AACR-2024-PDx-Disease-Subtyping_Poster_Final.pdf",
+    "figure_label": "Figure S1: targeted methylation platform workflow",
+    "alt": "Blood draw, targeted methylation sequencing, and classification algorithm produce cancer status and disease subtype predictions.",
+    "original": true,
+    "notes": "Original poster figure; cropped to selected panel, no content redrawn. Workflow schematic.",
+    "image": "cancer-subtypes-2024.webp"
+  },
+  "hpv-methylation-2020": {
+    "source_url": "https://grail.com/wp-content/uploads/2020/12/AACR_2020_Calef_HPV_POS_Final.pdf",
+    "figure_label": "Figure 4: UMAP embedding of detectable cancers",
+    "alt": "UMAP of cell-free DNA methylation profiles showing distinct groups across HPV-associated cancers and lung cancer subtypes.",
+    "original": true,
+    "notes": "Original poster figure; cropped to selected panel, no content redrawn. Poster contains results figures rather than a dedicated workflow schematic.",
+    "image": "hpv-methylation-2020.webp"
+  },
+  "wgs-cancer-detection-2019": {
+    "source_url": "https://grail.com/wp-content/uploads/2020/12/ASHG_2019_WGSFeatures_Melton_Poster_Final.pdf",
+    "figure_label": "Figure 1: sensitivity by stage",
+    "alt": "Cancer detection sensitivity at 98% specificity across cancer stages, comparing allelic imbalance, fragment endpoints, fragment lengths, bincounts and methylation.",
+    "original": true,
+    "notes": "Original poster Figure 1; cropped to figure content and resized without redrawing.",
+    "image": "wgs-cancer-detection-2019.webp"
+  },
+  "ccga-size-selection-2019": {
+    "source_url": "https://grail.com/wp-content/uploads/2020/12/ASCO_2019_WGS_Size_Selection_Filippova_Poster_Final.pdf",
+    "figure_label": "Figure 1: fragment length distribution by estimated tumor fraction",
+    "alt": "Cell-free DNA fragment length distributions at different estimated tumor fractions, showing the shift toward shorter fragments in samples with higher tumor fraction.",
+    "original": true,
+    "notes": "Original poster Figure 1; cropped to figure content and resized without redrawing.",
+    "image": "ccga-size-selection-2019.webp"
+  },
+  "vertebrate-synteny-2020": {
+    "source_url": "https://www.nature.com/articles/s41559-020-1156-z",
+    "alt": "Phylogenetic schematic showing amphioxus, lamprey and jawed vertebrates, with proposed early autotetraploidy and later allotetraploidy events.",
+    "modifications": "Cropped to Figure 5a; resized for thumbnail. No scientific content redrawn.",
+    "credit": "Simakov et al. (2020), Figure 5a; CC BY 4.0; cropped and resized.",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "figure_label": "Figure 5a",
+    "image": "vertebrate-synteny-2020.webp"
+  },
+  "chromosome-assembly-2016": {
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4772016/",
+    "alt": "Six-step Chicago library preparation schematic showing chromatin assembly, fixation, restriction digestion, labeled end filling, ligation and removal of crosslinks.",
+    "modifications": "Converted to PNG and resized for thumbnail; no crop or scientific content changes.",
+    "credit": "Putnam et al. (2016), Figure 1; CC BY 4.0; resized.",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "figure_label": "Figure 1",
+    "image": "chromosome-assembly-2016.webp"
+  },
+  "multicancer-methylation-2020": {
+    "source_url": "https://doi.org/10.1016/j.annonc.2020.02.011",
+    "alt": "Paper schematic comparing plasma methylation patterns in a non-cancer participant and a lung cancer participant, with additional tumor tissue measurements illustrating the cancer signal.",
+    "modifications": "Rendered original PDF; extracted unchanged panel B and complete Figure 1; resized thumbnail. No scientific content redrawn or relabeled.",
+    "credit": "Liu et al. (2020), Figure 1B; CC BY-NC-ND 4.0; extracted panel and resized.",
+    "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "notes": "Primary publisher blocked automated retrieval (403); official PMC page returned recaptcha per parent. Used an accessible PDF mirror of the published primary paper. Figure 2 is another original workflow but very tall; figure 1B better summarizes the biological signal, and figure 1C supplies a horizontal alternative. All panels visually inspected.",
+    "figure_label": "Figure 1B",
+    "image": "multicancer-methylation-2020.webp"
+  }
+}
